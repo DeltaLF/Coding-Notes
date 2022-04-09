@@ -5,7 +5,7 @@ let arrayReverse = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 let arrayDuplicated = [-1, 3, 3, 3, 3, 3, 3];
 let arrayDuplicatedReverse = [5, 5, 5, 5, 5, 5, 1];
 
-module.exports = { bubbleSort, insertSort };
+module.exports = { bubbleSort, insertSort, selectSort };
 
 function bubbleSort(array) {
   let temp;
@@ -40,4 +40,19 @@ function insertSort(array) {
   }
   console.log(array);
   return array;
+}
+
+function selectSort(array) {
+  for (let i = 0; i < array.length - 1; i++) {
+    let min = Infinity;
+    let ind = -1;
+    for (let j = i; j < array.length; j++) {
+      if (array[j] < min) {
+        min = array[j];
+        ind = j;
+      }
+    }
+    array[ind] = array[i];
+    array[i] = min;
+  }
 }
