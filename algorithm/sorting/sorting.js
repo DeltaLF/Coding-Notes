@@ -5,6 +5,28 @@ let arrayReverse = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
 let arrayDuplicated = [-1, 3, 3, 3, 3, 3, 3];
 let arrayDuplicatedReverse = [5, 5, 5, 5, 5, 5, 1];
 
+module.exports = { bubbleSort, insertSort };
+
+function bubbleSort(array) {
+  let temp;
+  for (let i = 0; i < array.length - 1; i++) {
+    let swappedFlag = false;
+    for (let j = 0; j < array.length - i - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+        swappedFlag = true;
+      }
+    }
+    if (!swappedFlag) {
+      break;
+    }
+  }
+  console.log(array);
+  return array;
+}
+
 function insertSort(array) {
   for (let i = 1; i < array.length; i++) {
     let newNumber = array[i];
@@ -17,11 +39,5 @@ function insertSort(array) {
     }
   }
   console.log(array);
+  return array;
 }
-
-insertSort(arrayOne);
-insertSort(arrayTwo);
-insertSort(array);
-insertSort(arrayReverse);
-insertSort(arrayDuplicated);
-insertSort(arrayDuplicatedReverse);
