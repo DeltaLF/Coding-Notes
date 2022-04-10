@@ -1,4 +1,5 @@
 const sortFunc = require("./../../algorithm/sorting/sorting");
+const sortFuncII = require("./../../algorithm/sorting/sortingII");
 const arrayOne = [1];
 const arrayTwo = [2, 1];
 const array = [1, 10, 2, 5, 6, 21];
@@ -19,18 +20,20 @@ describe("sorting", () => {
   function sortingTestFunc(sortFunction) {
     let flag = true;
     for (let arrayOriginal of totalArray) {
-      const array = arrayOriginal.slice(0);
-      sortFunction(array);
-      let preVal = array[0];
-      for (let val of array) {
-        if (val < preVal) {
+      const array = sortFunction(arrayOriginal.slice(0));
+      //console.log("before:", arrayOriginal, "after:", array);
+      const sortedArray = arrayOriginal.slice(0).sort(function (a, b) {
+        return a - b;
+      });
+      sortedArray.forEach((num, ind) => {
+        if (num !== array[ind]) {
           flag = false;
-          break;
         }
-        preVal = val;
-      }
+      });
+
       if (!flag) break;
     }
+
     return flag;
   }
 
@@ -46,6 +49,11 @@ describe("sorting", () => {
 
   test("selection Sort", () => {
     const result = sortingTestFunc(sortFunc.selectSort);
+    expect(result).toBe(true);
+  });
+
+  test("merge sort", () => {
+    const result = sortingTestFunc(sortFuncII.mergeSort);
     expect(result).toBe(true);
   });
 });

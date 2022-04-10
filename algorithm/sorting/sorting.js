@@ -1,3 +1,4 @@
+// worse performance sorting algorithm
 let arrayOne = [1];
 let arrayTwo = [2, 1];
 let array = [1, 10, 2, 5, 6, 21];
@@ -38,6 +39,7 @@ function insertSort(array) {
       j--;
     }
   }
+
   console.log(array);
   return array;
 }
@@ -55,4 +57,6 @@ function selectSort(array) {
     array[ind] = array[i];
     array[i] = min;
   }
+  console.log(array);
+  return array;
 }
