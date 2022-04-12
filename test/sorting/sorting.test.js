@@ -56,4 +56,8 @@ describe("sorting", () => {
     const result = sortingTestFunc(sortFuncII.mergeSort);
     expect(result).toBe(true);
   });
+  test("heap sort", () => {
+    const result = sortingTestFunc(sortFuncII.heapSort);
+    expect(result).toBe(true);
+  });
 });
