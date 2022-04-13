@@ -60,4 +60,8 @@ describe("sorting", () => {
     const result = sortingTestFunc(sortFuncII.heapSort);
     expect(result).toBe(true);
   });
+  test("quick sort", () => {
+    const result = sortingTestFunc(sortFuncII.quickSort);
+    expect(result).toBe(true);
+  });
 });

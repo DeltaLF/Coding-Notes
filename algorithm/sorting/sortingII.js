@@ -1,7 +1,7 @@
 // sorting algrithm with better performance
 let array = [1, 10, 2, 5, 6, 21, 3];
 
-module.exports = { mergeSort, heapSort };
+module.exports = { mergeSort, heapSort, quickSort };
 
 function mergeSort(array) {
   if (array.length <= 1) return array;
@@ -36,7 +36,7 @@ function mergeSort(array) {
   }
 }
 
-heapSort(array);
+//heapSort(array);
 
 function heapSort(array) {
   // 1. make maxheapify
@@ -82,5 +82,33 @@ function heapSort(array) {
       left = s * 2 + 1;
       right = s * 2 + 2;
     }
+  }
+}
+
+function quickSort(array) {
+  partition(array, 0, array.length - 1);
+  return array;
+  function partition(array, l, r) {
+    if (r <= l) {
+      return;
+    }
+    let a = l;
+    let b = l;
+    let temp;
+    while (a < r) {
+      console.log(array, a, b, r, l);
+      if (array[a] < array[r]) {
+        temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+        b++;
+      }
+      a++;
+    }
+    temp = array[b];
+    array[b] = array[r];
+    array[r] = temp;
+    partition(array, l, b - 1);
+    partition(array, b + 1, r);
   }
 }
