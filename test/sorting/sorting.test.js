@@ -1,10 +1,11 @@
 const sortFunc = require("./../../algorithm/sorting/sorting");
 const sortFuncII = require("./../../algorithm/sorting/sortingII");
+const sortFuncIII = require("./../../algorithm/sorting/sortingIII");
 const arrayOne = [1];
 const arrayTwo = [2, 1];
 const array = [1, 10, 2, 5, 6, 21];
 const arrayReverse = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
-const arrayDuplicated = [-1, 3, 3, 3, 3, 3, 3];
+const arrayDuplicated = [0, 3, 3, 3, 3, 3, 3];
 const arrayDuplicatedReverse = [5, 5, 5, 5, 5, 5, 1];
 
 const totalArray = [
@@ -62,6 +63,10 @@ describe("sorting", () => {
   });
   test("quick sort", () => {
     const result = sortingTestFunc(sortFuncII.quickSort);
+    expect(result).toBe(true);
+  });
+  test("counting sort", () => {
+    const result = sortingTestFunc(sortFuncIII.countingSort);
     expect(result).toBe(true);
   });
 });
