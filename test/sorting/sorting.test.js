@@ -69,4 +69,8 @@ describe("sorting", () => {
     const result = sortingTestFunc(sortFuncIII.countingSort);
     expect(result).toBe(true);
   });
+  test("radix sort", () => {
+    const result = sortingTestFunc(sortFuncIII.radixSort);
+    expect(result).toBe(true);
+  });
 });
