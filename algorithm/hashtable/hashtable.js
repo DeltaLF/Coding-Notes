@@ -4,9 +4,6 @@ function divisionHash(val, m = SIZE) {
   // similar input result in similar result
   return val % m;
 }
-console.log(divisionHash(100209));
-console.log(divisionHash(100210));
-console.log(divisionHash(100211));
 
 function multiplicationHash(val, m = SIZE) {
   // m for hash table size
@@ -14,10 +11,6 @@ function multiplicationHash(val, m = SIZE) {
   const A = (Math.sqrt(5) - 1) / 2;
   return Math.floor(m * ((val * A) % 1));
 }
-
-console.log(multiplicationHash(100209));
-console.log(multiplicationHash(100210));
-console.log(multiplicationHash(100211));
 
 class HashTable {
   constructor(size = SIZE) {
@@ -39,7 +32,6 @@ class HashTable {
         return collisionObj.val;
       }
     }
-    return null;
   }
   set(key, val) {
     const ind = this.hash(key);
@@ -50,11 +42,4 @@ class HashTable {
   }
 }
 
-let hash = new HashTable(20);
-hash.set(13579, "Jake");
-hash.set(3984, "Finn");
-hash.set(231, "Rigby");
-console.log(hash.get(3984));
-hash.set(999, "Mordecai");
-hash.set(5056, "Benson");
-hash.printAll();
+module.exports = { divisionHash, multiplicationHash, HashTable };
