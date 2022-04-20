@@ -22,3 +22,23 @@ function heapMax(array, s, e) {
     right = e * 2 + 2;
   }
 }
+
+const array = [1, 2, 3, 4, 5, 6, 7];
+// Tree Traversal
+function BreathFirstTraversal(array) {
+  // Breath-First Tree Trversal for perfect binary tree
+  console.log(array[0]);
+  for (let i = 0; i < array.length; i++) {
+    // perfect binary tree has two children for each node
+    const childLeft = i * 2 + 1;
+    const childRight = i * 2 + 2;
+    if (childLeft < array.length) {
+      console.log(array[childLeft]);
+    }
+    if (childRight < array.length) {
+      console.log(array[childRight]);
+    }
+  }
+}
+
+BreathFirstTraversal(array);
