@@ -25,7 +25,7 @@ function heapMax(array, s, e) {
 
 const array = [1, 2, 3, 4, 5, 6, 7];
 // Tree Traversal
-function BreathFirstTraversal(array) {
+function BreadthFirstTraversal(array) {
   // Breath-First Tree Trversal for perfect binary tree
   console.log(array[0]);
   for (let i = 0; i < array.length; i++) {
@@ -41,4 +41,44 @@ function BreathFirstTraversal(array) {
   }
 }
 
-BreathFirstTraversal(array);
+//BreadthFirstTraversal(array);
+
+function DFT_PostOrder(array) {
+  poo(0);
+  function poo(ind) {
+    if (ind >= array.length) {
+      return;
+    }
+    poo(ind * 2 + 1);
+    poo(ind * 2 + 2);
+    console.log(ind, array[ind]);
+  }
+}
+
+DFT_PostOrder(array);
+
+function DFT_PreOrder(array) {
+  pro(0);
+  function pro(ind) {
+    if (ind >= array.length) {
+      return;
+    }
+    console.log(ind);
+    pro(ind * 2 + 1);
+    pro(ind * 2 + 2);
+  }
+}
+DFT_PreOrder(array);
+
+function DFT_InOrder(array) {
+  ino(0);
+  function ino(ind) {
+    if (ind >= array.length) {
+      return;
+    }
+    ino(ind * 2 + 1);
+    console.log(ind);
+    ino(ind * 2 + 2);
+  }
+}
+DFT_InOrder(array);
