@@ -25,7 +25,7 @@ function heapMax(array, s, e) {
 
 const array = [1, 2, 3, 4, 5, 6, 7];
 // Tree Traversal
-function BreadthFirstTraversal(array) {
+function breadthFirstTraversal(array) {
   // Breath-First Tree Trversal for perfect binary tree
   console.log(array[0]);
   for (let i = 0; i < array.length; i++) {
@@ -41,9 +41,9 @@ function BreadthFirstTraversal(array) {
   }
 }
 
-//BreadthFirstTraversal(array);
+//breadthFirstTraversal(array);
 
-function DFT_PostOrder(array) {
+function posOrder_DFT(array) {
   poo(0);
   function poo(ind) {
     if (ind >= array.length) {
@@ -55,9 +55,9 @@ function DFT_PostOrder(array) {
   }
 }
 
-DFT_PostOrder(array);
+posOrder_DFT(array);
 
-function DFT_PreOrder(array) {
+function preOrder_DFT(array) {
   pro(0);
   function pro(ind) {
     if (ind >= array.length) {
@@ -68,9 +68,9 @@ function DFT_PreOrder(array) {
     pro(ind * 2 + 2);
   }
 }
-DFT_PreOrder(array);
+preOrder_DFT(array);
 
-function DFT_InOrder(array) {
+function inOrder_DFT(array) {
   ino(0);
   function ino(ind) {
     if (ind >= array.length) {
@@ -81,4 +81,44 @@ function DFT_InOrder(array) {
     ino(ind * 2 + 2);
   }
 }
-DFT_InOrder(array);
+inOrder_DFT(array);
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.right = null;
+    this.left = null;
+  }
+}
+
+class BinarySearchTree {
+  constructor() {
+    this.root = null;
+  }
+  bstInsert(val) {
+    const newNode = new Node(val);
+    let node = this.root;
+    let target = node;
+    while (node) {
+      target = node;
+      if (newNode.val >= node.val) {
+        node = node.right;
+      } else {
+        node = node.left;
+      }
+    }
+    if (!target) {
+      // empty bst
+      this.root = newNode;
+      return;
+    }
+    if (newNode.val >= target.val) {
+      target.right = newNode;
+    } else {
+      target.left = newNode;
+    }
+    return;
+  }
+}
+
+module.exports = { BinarySearchTree };
