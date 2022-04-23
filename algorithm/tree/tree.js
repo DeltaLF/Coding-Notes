@@ -119,6 +119,19 @@ class BinarySearchTree {
     }
     return;
   }
+
+  bstSearch(val) {
+    let node = this.root;
+    console.log("in search", val, node);
+    while (node && val !== node.val) {
+      if (val > node.val) {
+        node = node.right;
+      } else {
+        node = node.left;
+      }
+    }
+    return node;
+  }
 }
 
 module.exports = { BinarySearchTree };
