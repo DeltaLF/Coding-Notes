@@ -26,7 +26,7 @@ function maxHeapify(ind:number,array:number[]):void{
 }
 
 
-class PriorityQueue{
+export class PriorityQueue{
     stack: number [] = []
     constructor(){}
     enqueue(val:number):void{
@@ -71,25 +71,3 @@ class PriorityQueue{
 
 }
 
-const pq = new PriorityQueue()
-pq.enqueue(2)
-pq.enqueue(5)
-pq.enqueue(6)
-pq.enqueue(9)
-pq.enqueue(7)
-pq.enqueue(10)
-console.log(pq.stack)
-pq.dequeue()
-console.log(pq.stack)
-pq.dequeue()
-console.log(pq.stack)
-pq.dequeue()
-console.log(pq.stack)
-pq.enqueue(5)
-pq.enqueue(5)
-pq.dequeue()
-console.log(pq.stack)
-pq.dequeue()
-console.log(pq.stack)
-pq.dequeue()
-console.log(pq.stack)
