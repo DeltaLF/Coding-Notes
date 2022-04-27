@@ -48,10 +48,11 @@ F.addNeighbor(e8);
 const e9 = new Edge(C, F, 8);
 C.addNeighbor(e9);
 F.addNeighbor(e9);
+const allEdges = [e1,e2,e3,e4,e5,e6,e7,e8,e9]
 
 
 
-function minimalSpanningTree(node:Node, tree:Node[]):Edge[]{
+function minimalSpanningTreePrim(node:Node, tree:Node[]):Edge[]{
     const mstEdges:Edge[] = []
     let candidateEdges:Edge[] = []
     while(mstEdges.length < tree.length -1 ){
@@ -76,5 +77,24 @@ function minimalSpanningTree(node:Node, tree:Node[]):Edge[]{
     return mstEdges
 }
 
-const mstEdges = minimalSpanningTree(C,allNodes)
+// const mstEdges = minimalSpanningTreePrim(C,allNodes)
+// console.log(mstEdges)
+
+
+
+function minimalSpanningTreeKrusal(allEdges:Edge[]):Edge[]{
+    // Kruskal's algorithms
+    const mstEdges:Edge[] = []
+    const sortedEdges = allEdges.sort((edge1,edge2)=>{return edge1.weight - edge2.weight })
+    for(let edge of sortedEdges){
+        if(!edge.node1.visited || !edge.node2.visited){
+            mstEdges.push(edge)
+            edge.node1.visited = true
+            edge.node2.visited = true
+        }
+    }
+    return mstEdges
+}
+
+const mstEdges = minimalSpanningTreeKrusal(allEdges)
 console.log(mstEdges)
