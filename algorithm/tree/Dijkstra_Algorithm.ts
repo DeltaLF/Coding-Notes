@@ -121,23 +121,34 @@ F.addEdges(new Edge(C, 2));
 F.addEdges(new Edge(D, 3));
 F.addEdges(new Edge(E, 1));
 
+const mapList = [A,B,C,D,E,F]
 
-function dijkstraAlgorithm(startNode:Node):void{
-    // update distacneFromStartNode to shortest path
-    const nodeStack:Node[] = []
-    const minHeap = new MinHeap()
-    nodeStack.push(startNode)
-    let node
-    while(nodeStack.length > 0){
-        node = nodeStack.pop()!
-        node.visited = true
-        node.edges.forEach((edge)=>{
-            minHeap.enqueue(edge.node)
-        })        
-        const min = minHeap.dequeue()
+console.log(mapList)
+dijkstraAlgorithm(A, mapList)
+console.log(mapList)
 
+function dijkstraAlgorithm(startNode:Node,mapList:Node[]):void{
+    // update distacneFromStartNode(val) to shortest path
+    startNode.val = 0
+    const minHeap = new MinHeap<Node>()
+    mapList.forEach(node=>{
+        minHeap.enqueue(node)
+    })
+    while(minHeap.array.length > 0){  
+         const notNull = minHeap.dequeue() // start from startNode
+         if(!notNull){
+             throw new Error("there should not be null in enqueue ")
+         }
+        const currNode = notNull
+        currNode.visited = true
+        currNode.edges.forEach(edge=>{
+            const nextNode = edge.node
+            if(nextNode.val > currNode.val + edge.weight){
+                nextNode.val = currNode.val + edge.weight
+                nextNode.previous = currNode
+            }
+        })
     }
-    
 
 
 }
