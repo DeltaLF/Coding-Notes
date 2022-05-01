@@ -23,7 +23,7 @@ function minHeapify<T>(ind:number, array:T[]):void{
     }
 }
 
-class Minheap<T>{
+export class Minheap<T>{
     public values:T[] = [] 
     constructor(){}
     enqueue(value:NonNullable<T>):void{ // dequeue non-null assertion
