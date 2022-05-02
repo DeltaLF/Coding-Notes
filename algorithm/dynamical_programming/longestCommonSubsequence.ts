@@ -1,5 +1,5 @@
 
-function lcsRecursion(str1:string, str2:string):number{
+export function lcsRecursion (str1:string, str2:string):number{
     if(str1.length === 0 || str2.length === 0 ){return 0}
     const str1M = str1.slice(0,str1.length -1 )
     const str2M = str2.slice(0,str2.length -1 )
@@ -13,3 +13,4 @@ function lcsRecursion(str1:string, str2:string):number{
 const str1 = "ABCBBBBBBAS"
 const str2 = "A"
 console.log(lcsRecursion(str1, str2))
+
