@@ -10,7 +10,75 @@ export function lcsRecursion (str1:string, str2:string):number{
 
 }
 
-const str1 = "ABCBBBBBBAS"
-const str2 = "A"
+const str1 = "ABCBDABC"
+const str2 = "ABDCABAC"
 console.log(lcsRecursion(str1, str2))
+
+
+console.log(lcs(str1, str2)) // 8, 7
+
+export function lcs(str1:string, str2:string):number{
+    // dynamical programing
+    const lcsArray = new Array(str2.length +1 ).fill(0).map(()=>{return new Array(str1.length +1).fill(0)})        
+    const directionArray =  new Array(str2.length +1 ).fill(0).map(()=>{return new Array(str1.length +1).fill(0)})
+    lcsHelper()
+    const substring = findSubString()
+    console.log(substring)
+    function lcsHelper():void{
+        //   left:0 up:1 left-up:2
+        //    ''  s t r 1 ....
+        //  '' 0  0 ..
+        //   s 0
+        //   t 0
+        //   r 0
+        //   2 0
+        for(let v = 1 ; v <= str2.length ; v ++){    // vertical
+            for(let h = 1; h <= str1.length ; h++){  // horzental
+                if(str1[h - 1] === str2[v -1]){
+                    lcsArray[v][h] = lcsArray[v-1][h-1] + 1 
+                    directionArray[v][h] = 2
+                }else{
+                    if(lcsArray[v-1][h] > lcsArray[v][h-1]){
+                        // came from up
+                        lcsArray[v][h] = lcsArray[v-1][h] 
+                        directionArray[v][h] = 1
+
+                    }else{
+                        lcsArray[v][h] =  lcsArray[v][h-1]
+                        directionArray[v][h] = 0 // default value
+                    }
+                }
+            }
+        }
+        //console.log(lcsArray)
+    }
+console.log(directionArray)
+    function findSubString():string{
+        let substring = ''
+        let h = str1.length
+        let v = str2.length 
+        let i = lcsArray[str2.length][str1.length]
+        while(i > 0){
+            console.log(`i:${i} => h:${h} v:${v}  ${directionArray[v][h]}`)
+            switch(directionArray[v][h]){
+                case 2:
+                    substring = str1[h -1] + substring 
+                    v--
+                    h--
+                    i--
+                    break;
+                case 1:
+                    v--
+                    break
+                case 0:
+                    h--
+                    break
+            }
+        }
+
+        return substring
+    }
+
+    return lcsArray[str2.length][str1.length]
+}
 
