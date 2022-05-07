@@ -18,14 +18,37 @@ function permutation(array:string[],prevStr:string=""):void{
 
 }
 
+perm(['A','B','C','D'])
+function perm(array:string[], start:number=0):void{
+    let l = array.length 
+    if(start >= l){
+        console.log(array)
+    }
+    for(let i=start;i<array.length;i++){
+        swap(array,start, i)
+        perm(array,start + 1)
+        swap(array,i, start)
+
+    }
+
+    function swap(array:string[],l:number,r:number):void{
+        let temp =array[l]
+        array[l] = array[r]
+        array[r] = temp
+    }
+}
+
 backtrackPerm(['A','B','C'])
 function backtrackPerm(array:string[]):void{
     // backstrack permutation
     const l = array.length
     for(let i=0;i<l;i++){
         for(let j=0;j<l;j++){
+            if(i==j){
+                continue
+            }
             for(let k=0;k<l;k++){
-                if(i == j || j==k || i==k){
+                if( j==k || i==k){
                     // stop whenver indexes are duplicated
                     continue
                 }
