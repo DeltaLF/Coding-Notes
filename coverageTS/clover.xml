@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652367776555" clover="3.2.0">
-  <project timestamp="1652367776555" name="All files">
-    <metrics statements="33" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2" elements="42" coveredelements="42" complexity="0" loc="33" ncloc="33" packages="1" files="1" classes="1"/>
-    <file name="kmpSubstring.ts" path="C:\Users\USER\Desktop\nodejs\Project\CodingNotes\algorithm\backtracking\kmpSubstring.ts">
-      <metrics statements="33" coveredstatements="33" conditionals="7" coveredconditionals="7" methods="2" coveredmethods="2"/>
-      <line num="21" count="1" type="stmt"/>
-      <line num="22" count="1" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="29" count="1" type="stmt"/>
-      <line num="30" count="8" type="stmt"/>
-      <line num="31" count="8" type="stmt"/>
-      <line num="32" count="8" type="stmt"/>
-      <line num="33" count="8" type="stmt"/>
-      <line num="34" count="43" type="cond" truecount="2" falsecount="0"/>
-      <line num="35" count="21" type="stmt"/>
-      <line num="36" count="21" type="stmt"/>
-      <line num="37" count="21" type="stmt"/>
-      <line num="39" count="22" type="cond" truecount="1" falsecount="0"/>
-      <line num="40" count="13" type="stmt"/>
-      <line num="41" count="13" type="stmt"/>
-      <line num="42" count="13" type="stmt"/>
-      <line num="44" count="9" type="stmt"/>
-      <line num="47" count="8" type="stmt"/>
-      <line num="51" count="1" type="stmt"/>
-      <line num="53" count="5" type="stmt"/>
-      <line num="54" count="5" type="stmt"/>
-      <line num="55" count="5" type="stmt"/>
-      <line num="56" count="5" type="stmt"/>
-      <line num="57" count="5" type="stmt"/>
-      <line num="58" count="62" type="stmt"/>
-      <line num="59" count="62" type="cond" truecount="2" falsecount="0"/>
-      <line num="60" count="40" type="stmt"/>
-      <line num="61" count="40" type="cond" truecount="1" falsecount="0"/>
-      <line num="62" count="4" type="stmt"/>
-      <line num="65" count="22" type="cond" truecount="1" falsecount="0"/>
-      <line num="66" count="11" type="stmt"/>
-      <line num="70" count="1" type="stmt"/>
+<coverage generated="1652449108632" clover="3.2.0">
+  <project timestamp="1652449108632" name="All files">
+    <metrics statements="43" coveredstatements="43" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7" elements="60" coveredelements="60" complexity="0" loc="43" ncloc="43" packages="1" files="1" classes="1"/>
+    <file name="permutation.ts" path="C:\Users\USER\Desktop\nodejs\Project\CodingNotes\algorithm\backtracking\permutation.ts">
+      <metrics statements="43" coveredstatements="43" conditionals="10" coveredconditionals="10" methods="7" coveredmethods="7"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="6" count="6" type="stmt"/>
+      <line num="7" count="6" type="stmt"/>
+      <line num="8" count="6" type="stmt"/>
+      <line num="12" count="479" type="stmt"/>
+      <line num="13" count="479" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="302" type="cond" truecount="1" falsecount="0"/>
+      <line num="17" count="177" type="stmt"/>
+      <line num="20" count="479" type="stmt"/>
+      <line num="22" count="473" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="35" count="6" type="stmt"/>
+      <line num="36" count="6" type="stmt"/>
+      <line num="37" count="6" type="stmt"/>
+      <line num="40" count="479" type="stmt"/>
+      <line num="41" count="479" type="cond" truecount="1" falsecount="0"/>
+      <line num="42" count="177" type="stmt"/>
+      <line num="45" count="479" type="stmt"/>
+      <line num="46" count="473" type="stmt"/>
+      <line num="47" count="473" type="stmt"/>
+      <line num="48" count="473" type="stmt"/>
+      <line num="53" count="946" type="stmt"/>
+      <line num="54" count="946" type="stmt"/>
+      <line num="55" count="946" type="stmt"/>
+      <line num="61" count="1" type="stmt"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+      <line num="67" count="2" type="stmt"/>
+      <line num="68" count="2" type="stmt"/>
+      <line num="69" count="2" type="stmt"/>
+      <line num="73" count="2" type="stmt"/>
+      <line num="74" count="2" type="stmt"/>
+      <line num="75" count="6" type="stmt"/>
+      <line num="76" count="18" type="cond" truecount="1" falsecount="0"/>
+      <line num="77" count="6" type="stmt"/>
+      <line num="79" count="12" type="stmt"/>
+      <line num="80" count="36" type="cond" truecount="3" falsecount="0"/>
+      <line num="82" count="24" type="stmt"/>
+      <line num="85" count="12" type="stmt"/>
     </file>
   </project>
 </coverage>
